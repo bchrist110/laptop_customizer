@@ -1,6 +1,6 @@
 import React from 'react';
 import USCurrencyFormat from '../USCurrencyFormat.js';
-import slugify from 'slugify';
+// import slugify from 'slugify';
 
 export default function FeatureItem(props) { 
     console.log(props.selected)
@@ -12,10 +12,10 @@ export default function FeatureItem(props) {
             <input
               type="radio"
               className="feature__option"
-              name={slugify(props.feature)}
+              name={props.feature}
                value={props.item}
                checked={props.item.name === props.selected[props.feature].name}
-               onChange={e => this.props.handleUpdate(props.selected[props.feature].name, e.target.value)}
+               onChange={e => props.handleUpdate(props.selected[props.feature].nam, props.item)}
             />
             <label className="feature__label">
               {props.item.name} ({USCurrencyFormat.format(props.item.cost)})
