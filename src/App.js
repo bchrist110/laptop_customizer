@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
-import slugify from 'slugify';
+// import slugify from 'slugify';
 import './App.css';
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -14,8 +14,8 @@ class App extends Component {
   state = {
     selected: {
       Processor: {
-        name: '17th Generation Intel Core HB (7 Core with donut spare)',
-        cost: 700
+        name: 'Professor X AMD Fire Breather with sidewinder technology',
+        cost: 1200
       },
       'Operating System': {
         name: 'Ubuntu Linux 16.04',
@@ -122,6 +122,8 @@ export default App;
 //     const features = Object.keys(this.props.features).map((feature, idx) => {
 //       const featureHash = feature + '-' + idx;
 //       const options = this.props.features[feature].map(item => {
+//         // console.log(feature)
+//         console.log(item.name, this.state.selected[feature].name)
 //         const itemHash = slugify(JSON.stringify(item));
 //         return (
 //           <div key={itemHash} className="feature__item">
