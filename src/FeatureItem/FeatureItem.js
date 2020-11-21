@@ -4,17 +4,15 @@ import USCurrencyFormat from '../USCurrencyFormat.js';
 
 export default function FeatureItem(props) { 
     console.log(props.selected)
-    console.log(props.feature)
-    console.log(props.item)
-    console.log(props.selected[props.feature])
 
     let handleChange = (e) => {
       console.log("hi")
-      // props.handleUpdate(props.feature, e.target.value)
+      props.handleUpdate(props.feature, props.item)
     }    
     return (
             <div className="feature__item">
             <input
+              id={props.itemHash}
               type="radio"
               className="feature__option"
               name={props.item.name}
@@ -23,7 +21,7 @@ export default function FeatureItem(props) {
               // onChange={e => props.handleUpdate(props.feature, e.target.value)}
               onChange={handleChange}
             />
-            <label className="feature__label">
+            <label htmlFor={props.itemHash} className="feature__label">
               {props.item.name} ({USCurrencyFormat.format(props.item.cost)})
             </label>
           </div>
